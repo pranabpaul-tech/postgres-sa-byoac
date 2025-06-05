@@ -127,12 +127,12 @@ module monitoring './shared/monitoring.bicep' = {
   }
   scope: rg
 }
-
+/*
 resource appInsights 'Microsoft.Insights/components@2022-05-01' existing = {
   name: monitoring.outputs.applicationInsightsName
   scope: rg
 }
-
+*/
 module registry './shared/registry.bicep' = {
   name: 'registry'
   params: {

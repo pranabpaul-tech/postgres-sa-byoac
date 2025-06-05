@@ -92,7 +92,7 @@ async def download_csv(client: BlobServiceClient, blob_path: str, local_data_dir
             if not os.path.exists(local_data_dir):
                 os.makedirs(local_data_dir)
 
-            with open(f'{local_data_dir}{blob_path.split('/')[-1]}', 'wb') as file:
+            with open(f'{local_data_dir}{blob_path.split("/")[-1]}', 'wb') as file:
                 stream = await blob_client.download_blob()
                 result = await stream.readall()
                 # Save the CSV file to a local directory
